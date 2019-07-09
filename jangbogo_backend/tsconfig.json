@@ -1,12 +1,26 @@
 {
   "compilerOptions": {
     "outDir": "./dist", 
-    "lib": ["es5", "es6"], 
+    "baseUrl" : "./src", 
+    "moduleResolution": "node", 
+    "paths" : {
+      "routes/*" : [
+        "routes/*",
+      ], 
+      "models/*" : [
+        "models/*"
+      ], 
+      "settings/*" : [
+        "settings/*"
+      ] 
+    }, 
+    "lib": ["es5"], 
     "target": "es5", 
     "module": "commonjs", 
-    "moduleResolution": "node", 
     "emitDecoratorMetadata": true, 
     "experimentalDecorators": true, 
   }, 
-  "include": ["./src/**/*"]
+  "include": [
+    "./src/**/*", 
+  ]
 }
