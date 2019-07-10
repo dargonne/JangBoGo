@@ -1,6 +1,6 @@
 /** 
  * @project  "JANGBOGO"
- * @file     /src/models/notice/index.ts
+ * @file     /src/models/notice.ts
  * @version  1.0 
  * @date     2019-07-09 
  * @author   Seungjin Bang (seungjin.public＠gmail.com) 
@@ -19,7 +19,7 @@ export interface INoticeModel extends INotice, Document {
   edited_dt: Date; 
 }
 
-const noticeSchema = new Schema({
+const noticeSchema: Schema = new Schema({
   title: String, 
   content: String, 
   created_dt: { type: Date, default: Date.now }, 
