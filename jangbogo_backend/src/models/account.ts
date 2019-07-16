@@ -10,7 +10,6 @@
 import { Schema, Document, model } from 'mongoose'; 
 
 import * as bcrypt from 'bcryptjs'; 
-import SETTINGS_INFO from 'settings/index'; 
 
 export interface IAccount extends Document {
   profile: IAccountProfile; 
@@ -37,13 +36,13 @@ export interface IAccountSocialDetail extends Document {
 
 const accountSchema: Schema = new Schema({
   profile: {
-    username: String, 
+    username: { type: String, index: true }, 
     thumbnail: { 
       type: String, 
       default: "http://image.yes24.com/momo/TopCate1363/MidCate006/136259905.jpg"
     }
   }, 
-  email: String, 
+  email: { type: String, unique: true, index: true  }, 
   password: String, 
   social: {
     kakao: {
@@ -58,40 +57,6 @@ const accountSchema: Schema = new Schema({
   created_dt: { type: Date, default: Date.now } 
 }); 
 
-/** 해시 비밀번호 발급 */
-async function generateHash(password) {
-  const VALIDATE_INFO: any = SETTINGS_INFO[process.env.NODE_ENV].bcrypt; 
-
-  const SALT: any = bcrypt.genSalt(VALIDATE_INFO.salt); 
-  return await bcrypt.hash(password, SALT);  
-}
-
-/** 이메일 중복 확인 */
-accountSchema.static.findByEmail = function (email: string) {
-  return this.findOne({email: email}); 
-}
-
-/** 이름과 이메일을 통해 회원 조회 */
-accountSchema.static.findAccountInfo = function(name: string, email: string) {
-  return this.findOne({
-          'profile.username': name, 
-           email 
-         }); 
-};
-
-
-
-/** 이메일로 회원 가입 */
-accountSchema.methods.addLocalUser = function (cb: any) {
-  this.password = generateHash(this.password); 
-
-  return this.save(cb); 
-}
-
-/** 비밀번호 검증 확인 */
-accountSchema.methods.validatePassword = function (password: string) {
-
-}
 
 export default model<IAccount>("Account", accountSchema, "account_collection"); 
 

@@ -38,6 +38,7 @@ export default class App {
     const SERVER_URL = SETTINGS[process.env.NODE_ENV].database.mongoDB; 
 
     try {
+      mongoose.set('useCreateIndex', true); 
       mongoose.connect(SERVER_URL, { useNewUrlParser: true })
     } catch (err) {
       console.log("*************************************"); 

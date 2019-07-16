@@ -26,4 +26,5 @@
  faq.delete("/article", faqController.dropFaqArticle); 
  faq.get("/article/:category", faqController.getListByCategory); 
  faq.patch("/article/:id", faqController.editFaqArticle); 
+
  export default faq; 

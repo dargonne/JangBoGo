@@ -12,7 +12,10 @@
       ], 
       "settings/*" : [
         "settings/*"
-      ] 
+      ], 
+      "modules/*": [
+        "modules/*" 
+      ]
     }, 
     "lib": ["es5"], 
     "target": "es5", 
