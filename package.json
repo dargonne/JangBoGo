@@ -1,0 +1,26 @@
+{
+  "name": "JANGBOGO",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dargonne/JangBoGo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dargonne/JangBoGo/issues"
+  },
+  "homepage": "https://github.com/dargonne/JangBoGo#readme",
+  "dependencies": {
+    "mailgun-js": "^0.22.0"
+  },
+  "devDependencies": {
+    "@types/mailgun-js": "^0.22.2"
+  }
+}
