@@ -9,9 +9,13 @@
 
 import * as Router from 'koa-router'; 
 import SignupControlloer from './signup.ctrl'; 
+import EditController from './edit.ctrl'; 
+import FindController from './find.ctrl'; 
 
 const account: Router = new Router(); 
 const signUpController: SignupControlloer = new SignupControlloer(); 
+const editController: EditController = new EditController(); 
+const findController: FindController = new FindController(); 
 
 /** 회원가입 관련 조회 라우팅 */
 account.get('/inquery/:email', signUpController.getEmailValidate); 
@@ -20,6 +24,13 @@ account.get('/inquery/:email', signUpController.getEmailValidate);
 account.post('/signup/email', signUpController.signUpAccount); 
 
 /** 회원정보 수정 */
+account.delete('/', editController.withdrawAccount); 
+account.patch('/password', editController.changePassword); 
+account.patch('/basic', editController.changeBasicInfo); 
+account.patch('/social/link', editController.linkSocialAccount); 
+account.patch('/social/unlink', editController.unlinkSocialAccount); 
 
+/** 비밀번호 찾기 */
+account.post('/password', findController.findAccountPassword); 
 
 export default account; 
