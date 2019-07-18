@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "jsx": "react", 
+    "moduleResolution": "node", 
+    "module": "commonjs", 
+    "target": "es5", 
+    "lib": [
+      "es2015", "es6", "esnext", "dom" 
+    ], 
+    "allowJs": true, 
+    "sourceMap": true, 
+    "outDir": "dist", 
+    "baseUrl": "src", 
+    "paths": {
+      "components/*": ["components/*"], 
+      "containers/*": ["containers/*"], 
+      "assets/*": ["assets/*"], 
+      "views/*": ["views/*"], 
+      "utils/*": ["utils/*"]
+    }, 
+    "allowSyntheticDefaultImports": true, 
+    "keyofStringsOnly": true 
+  },
+  "include": [
+    "./src/**/*"
+  ], 
+  "exclude": [
+    "./node_modules/**/*" 
+  ]
+}
