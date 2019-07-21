@@ -23,12 +23,4 @@ export default class JWTmodule {
       throw new Error("Error occured from refresh jwt"); 
     }
   }
-
-  async refreshTokben(info: Object) {
-    try {
-      console.log('token', info); 
-    } catch(e) {
-      throw new Error("Error occured from validate token"); 
-    }
-  }
 }

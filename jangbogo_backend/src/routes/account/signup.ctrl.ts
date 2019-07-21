@@ -16,7 +16,6 @@ export default class SignupController {
   async getEmailValidate(ctx: Context) {
     const { email } = ctx.params; 
     let inqueryResult; 
-    
 
     try {
       inqueryResult = await Account.collection.countDocuments({ email });

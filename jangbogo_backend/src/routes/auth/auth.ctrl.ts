@@ -64,7 +64,7 @@ export default class AuthController {
         }
 
       } else if(type === "social") {
-        /** 소셜로그인 보류 */
+        /** 소셜로그인은 프론트 작업 완료시 진행 (현재상태 보류) */
         ctx.body = {
           "result": true, 
         }
@@ -103,6 +103,7 @@ export default class AuthController {
         return ctx.body = {
           "result": true, 
         }
+
       } else {
         return ctx.body = {
           "result": true, 
