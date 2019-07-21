@@ -18,4 +18,12 @@ export default class BcryptModule {
       throw new Error("Error occured from password encryption"); 
     }
   }
+
+  async compareHash(target: string, compare: string) {
+    try {
+      return bcrypt.compareSync(target, compare); 
+    } catch(e) {
+      throw new Error("Error occured from password decryption"); 
+    }
+  }
 }

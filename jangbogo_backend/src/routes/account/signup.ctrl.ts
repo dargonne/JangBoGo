@@ -48,7 +48,10 @@ export default class SignupController {
       const newAccount = new Account({
         email, 
         password : hashPassword, 
-        'profile.username' : username  
+        profile: {
+          username: username, 
+          thumbnail: "" 
+        }
       });
       
 

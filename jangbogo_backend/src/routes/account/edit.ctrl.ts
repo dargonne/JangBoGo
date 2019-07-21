@@ -18,14 +18,10 @@
       const { id, email, username } = ctx.request.body; 
     
       try {
-        await Account.where({ _id: id })
-                .updateOne({
-                  email: email, 
-                  'profile.username': username, 
-                })
+        await Account.findByIdAndUpdate(id, { email, 'profile.username': username})
                 .setOptions({ runvalidators: true }); 
 
-       return ctx.body = {
+         return ctx.body = {
                 "result": true,       
               }
 
@@ -43,10 +39,7 @@
       const bcrypt = new BcryptModule(); 
       const newPassHash = await bcrypt.generateHash(newPass); 
       
-      await Account.where({ _id: id })
-            .updateOne({
-              password: newPassHash, 
-            })
+      await Account.findByIdAndUpdate(id, { password: newPassHash })
             .setOptions({ runvalidators: true }); 
 
       return ctx.body = {

@@ -53,14 +53,7 @@
      const { category, title, content } = ctx.request.body;  
 
      try {
-       await Faq.where({ _id: id })
-                .updateOne({
-                  category, 
-                  title, 
-                  content, 
-                  edited_dt: Date.now() 
-                })
-                .setOptions({ runValidators: true }); 
+       await Faq.findByIdAndUpdate(id, { category, title, content, edited_dt: Date.now()}).setOptions({ runValidators: true }); 
 
      } catch (e) {
        ctx.throw(500, e); 

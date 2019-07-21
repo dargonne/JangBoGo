@@ -49,10 +49,7 @@
       const { category } = ctx.request.body; 
 
       try {
-        await FaqCategory.where({ _id: id })
-              .updateOne({
-                category, 
-              })
+        await FaqCategory.findByIdAndUpdate(id, { category })
               .setOptions({ runValidators: true }); 
 
       } catch(e) {

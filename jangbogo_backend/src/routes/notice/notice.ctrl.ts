@@ -73,12 +73,7 @@ export default class NoticeController {
 
     try {
 
-      await Notice.where({ _id: id })
-            .updateOne({ 
-              title, 
-              content, 
-              edited_dt: Date.now() 
-            })
+      await Notice.findByIdAndUpdate(id, { title, content, edited_dt: Date.now()})
             .setOptions({ runValidators: true }); 
 
     } catch (e) {

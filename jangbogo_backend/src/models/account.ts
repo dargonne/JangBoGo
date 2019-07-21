@@ -12,26 +12,23 @@ import { Schema, Document, model } from 'mongoose';
 import * as bcrypt from 'bcryptjs'; 
 
 export interface IAccount extends Document {
-  profile: IAccountProfile; 
+  profile: {
+    username: string, 
+    thumbnail: string, 
+  }; 
   email: string; 
   password: string; 
-  social: IAccountSocial;  
+  social: {
+    kakao: {
+      id: string, 
+      accessToken: string, 
+    }, 
+    naver: {
+      id: String, 
+      accessToken: string, 
+    }
+  };  
   created_dt: Date; 
-}
-
-export interface IAccountProfile extends Document {
-  username: string; 
-  thumbnail: string; 
-}
-
-export interface IAccountSocial extends Document {
-  kakao: IAccountSocialDetail;  
-  naver: IAccountSocialDetail; 
-}
-
-export interface IAccountSocialDetail extends Document {
-  id: string; 
-  accessToken: String; 
 }
 
 const accountSchema: Schema = new Schema({

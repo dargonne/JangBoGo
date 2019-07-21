@@ -16,11 +16,5 @@
   "bugs": {
     "url": "https://github.com/dargonne/JangBoGo/issues"
   },
-  "homepage": "https://github.com/dargonne/JangBoGo#readme",
-  "dependencies": {
-    "mailgun-js": "^0.22.0"
-  },
-  "devDependencies": {
-    "@types/mailgun-js": "^0.22.2"
-  }
+  "homepage": "https://github.com/dargonne/JangBoGo#readme"
 }

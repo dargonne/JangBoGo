@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom'
 import Header from 'components/header/Header'; 
 import UserMenu from 'containers/usermenu/UserMenu'; 
 
+import OAuth from 'views/OAuth'; 
 import Landing from 'views/Landing'; 
 
 import './Root.scss'; 
@@ -18,6 +19,7 @@ const Root = () => {
         </div>
         <Switch>
           <Route path="/" exact component={Landing} /> 
+          <Route path="/oauth" component={OAuth} /> 
         </Switch>
       </div>
       <div className="wrapper-usermenu">
