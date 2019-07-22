@@ -4,7 +4,8 @@ import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom'
 
 import Header from 'components/header/Header'; 
 import UserMenu from 'containers/usermenu/UserMenu'; 
-
+import Login from 'views/Login'; 
+import Signup from 'views/Signup'; 
 import OAuth from 'views/OAuth'; 
 import Landing from 'views/Landing'; 
 
@@ -19,6 +20,8 @@ const Root = () => {
         </div>
         <Switch>
           <Route path="/" exact component={Landing} /> 
+          <Route path="/login" component={Login} /> 
+          <Route path="/signup" component={Signup} /> 
           <Route path="/oauth" component={OAuth} /> 
         </Switch>
       </div>

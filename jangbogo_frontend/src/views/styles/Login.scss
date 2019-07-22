@@ -1,0 +1,108 @@
+.login-big-wrapper {
+  display: flex; 
+  width: 100%; 
+  min-width: 470px;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  -ms-flex-direction: column; 
+
+  .login-wrapper {
+    display: flex; 
+    width: 470px; 
+    flex-direction: column; 
+    -ms-flex-direction: column; 
+    background-color: #fff; 
+    margin: 1em 0; 
+    padding: 1em 0.6em; 
+  }
+
+  .login-container {
+    display: flex; 
+    width: 100%; 
+    flex-direction: column; 
+    -ms-flex-direction: column; 
+
+    h3 {
+      font-size: 2em; 
+      font-weight: 700; 
+    }
+
+    p {
+      font-size: 1.3em; 
+    }
+
+    input {
+      padding: 0.5em 0.3em; 
+      margin: 0.3em 0; 
+      font-weight: 400; 
+      font-size: 1.3em; 
+      color: rgb(53, 53, 53);
+    }
+
+    input::placeholder {
+      font-size: 1.2em; 
+      padding: 0.5em 0 0 0; 
+    }
+
+    #login-email {
+      width: 100%; 
+      border: 1px solid #8b8b8b; 
+      height: 35px; 
+      max-height: 35px; 
+      font-size: 1.2em; 
+      font-weight: 700; 
+      margin: 0.2em 0; 
+      color: #5A5A5A; 
+    }
+
+    #login-naver {
+      width: 100%; 
+      border: none; 
+      height: 35px; 
+      max-height: 35px; 
+      font-size: 1.2em; 
+      font-weight: 700; 
+      margin: 0.2em 0; 
+      color: #fff; 
+      background-color: #00c73c; 
+    }
+
+    #login-kakao {
+      width: 100%; 
+      border: none; 
+      height: 35px; 
+      max-height: 35px; 
+      font-size: 1.2em; 
+      font-weight: 700; 
+      margin: 0.2em 0; 
+      color: #000; 
+      background-color: #ffe812; 
+    }
+
+  }
+
+  .login-info- {
+
+    &container {
+      display: flex; 
+      flex-direction: row; 
+      -ms-flex-direction: row; 
+      width: 100%; 
+      margin: 0.3em 0; 
+    }
+    
+    &what {
+      width: 80%; 
+      font-size: 1.2em; 
+      color: #000; 
+    }
+
+    &how {
+      width: 20%; 
+      font-size: 1.2em; 
+      color: #000; 
+      font-weight: 700; 
+    }   
+  }
+}

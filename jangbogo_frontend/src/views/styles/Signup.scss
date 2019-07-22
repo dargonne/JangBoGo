@@ -1,0 +1,112 @@
+.register-wrapper {
+  display: flex; 
+  width: 100%; 
+  min-width: 470px;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  -ms-flex-direction: column;
+  
+  margin: 1.5em 0; 
+
+  
+  .register-container {
+    display: flex; 
+    width: 470px; 
+    flex-direction: column; 
+    -ms-flex-direction: column; 
+    background-color: #fff;
+    padding: 0.5em 1em 0 1em;
+    
+    h3 {
+      font-size: 2em; 
+      font-weight: 700; 
+    }
+
+    p {
+      font-size: 1em; 
+      word-break: break-all; 
+    }
+
+    input {
+      padding: 0.3em 0.3em; 
+      margin: 0.3em 0; 
+      font-weight: 400; 
+      font-size: 1em; 
+      color: rgb(53, 53, 53);
+    }
+  
+    input::placeholder {
+      font-size: 1em; 
+      padding: 0.5em 0 0 0; 
+    }
+
+    .register-warning {
+      font-size: 1em; 
+      color: #CC3D3D; 
+    }
+
+    .register-agreement {
+      margin: 0.5em 0; 
+    }
+
+    input[type="checkbox"] {
+      position: absolute; 
+      width: 1px; 
+      height: 1px; 
+      padding: 0; 
+      margin: -1px; 
+      overflow: hidden; 
+      clip:rect(0, 0, 0, 0); 
+      border: 0; 
+    }
+
+    input[type="checkbox"] + label {
+      display: inline-block; 
+      position: relative; 
+      cursor: pointer; 
+      -webkit-user-select: none; 
+      -moz-user-select: none; 
+      -ms-user-select: none; 
+    
+      &:before {
+        content: ' '; 
+        display: inline-block; 
+        width: 20px; 
+        height: 20px; 
+        line-height: 20px; 
+        margin: -2px 8px 0 0; 
+        text-align: center; 
+        vertical-align: middle; 
+        background: #fff; 
+        border: 1px solid #6a6a6a; 
+        border-radius: 50%; 
+      }
+    }
+
+    input[type="checkbox"]:checked + label:before {
+      content: '\2714'; 
+      color: #99a1a7; 
+      text-shadow: 1px 1px fff; 
+      background: #e9ecee; 
+      border-color: #adb8c0; 
+      color: #000; 
+      font-size: 1.7em; 
+    }
+
+    
+
+  }
+
+  #btn-signup {
+    width: 100%; 
+    border: 1px solid #8b8b8b; 
+    height: 35px; 
+    max-height: 35px; 
+    font-size: 1.2em; 
+    font-weight: 700; 
+    margin: 0 0 1em 0; 
+    color: #5A5A5A; 
+  }
+
+}

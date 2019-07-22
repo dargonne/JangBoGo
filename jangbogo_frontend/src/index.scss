@@ -57,10 +57,10 @@ input::-moz-focus-inner{
 }
 
 html, body { 
+  width: 100%; 
   min-height:100%; 
   min-width:360px; 
   background-color: #e5e5e5; 
-  width:100%;
   height: auto;
 }
 
