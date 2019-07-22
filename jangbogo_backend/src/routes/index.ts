@@ -14,6 +14,7 @@ import notice from 'routes/notice';
 import faq from 'routes/faq'; 
 import bucket from "routes/bucket"; 
 import alert from "routes/alert"; 
+import search from "routes/search"; 
 
 const api: Router = new Router(); 
 
@@ -24,5 +25,6 @@ api.use("/notice", notice.routes());
 api.use("/faq", faq.routes()); 
 api.use("/bucket", bucket.routes()); 
 api.use("/alert", alert.routes()); 
+api.use("/search", search.routes()); 
 
 export default api; 
